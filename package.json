@@ -1,0 +1,34 @@
+{
+  "name": "ladder-lessons",
+  "version": "1.0.0",
+  "description": "Interactive Phonics Platform for Teachers - Perfect for Zoom Classes",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd frontend && pnpm run dev",
+    "build": "cd frontend && pnpm run build",
+    "preview": "cd frontend && pnpm run preview",
+    "install-deps": "cd frontend && pnpm install",
+    "deploy": "cd frontend && pnpm run build"
+  },
+  "keywords": [
+    "phonics",
+    "education",
+    "teachers",
+    "zoom",
+    "interactive",
+    "learning",
+    "children",
+    "react"
+  ],
+  "author": "Ladder Lessons Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/ladder-lessons.git"
+  },
+  "homepage": "https://YOUR_USERNAME.github.io/ladder-lessons",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+
