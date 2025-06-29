@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ladder Lessons - Interactive Phonics for Teachers</title>
+    <meta
+      name="description"
+      content="Interactive Phonics Platform for Teachers - Perfect for Zoom Classes"
+    />
+    
+    <!-- Resource hints for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://firebaseapp.com">
+    <link rel="preconnect" href="https://firebasestorage.googleapis.com">
+    
+    <!-- Modern font loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Meta tags for better SEO -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:title" content="Ladder Lessons - Interactive Phonics for Teachers" />
+    <meta property="og:description" content="Interactive Phonics Platform for Teachers - Perfect for Zoom Classes" />
+    <meta property="og:type" content="website" />
+
+    <!-- Initial loading styles -->
+    <style>
+      /* Modern loading spinner */
+      #initial-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+        z-index: 9999;
+        transition: opacity 0.3s ease-out;
+      }
+      #initial-loader.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #000000;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 16px;
+      }
+      .loading-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        color: #666;
+        margin-top: 8px;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      /* Ensure smooth font loading */
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+
+    <!-- GitHub Pages SPA support -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash,
+          );
+        }
+      })(window.location);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- Initial loading indicator -->
+    <div id="initial-loader">
+      <div class="spinner"></div>
+      <div class="loading-text">Loading Ladder Lessons...</div>
+    </div>
+
+    <script type="module" src="./src/main.jsx"></script>
+    
+    <!-- Remove loader once app is ready -->
+    <script>
+      window.addEventListener('load', () => {
+        // Small delay to ensure smooth transition
+        setTimeout(() => {
+          const loader = document.getElementById('initial-loader');
+          if (loader) {
+            loader.classList.add('hidden');
+            // Remove from DOM after transition
+            setTimeout(() => loader.remove(), 300);
+          }
+        }, 100);
+      });
+    </script>
+  </body>
+</html>
